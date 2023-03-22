@@ -1,0 +1,20 @@
+common:
+ adapter: pool
+ tasks_per_worker: 1
+ cores_per_worker: 1 
+ memory_per_worker: {MEM_PER_WORKERS}
+ max_workers: {NB_WORKERS}
+ scratch_directory: "$TMPDIR"
+
+server:
+ fractal_uri: {SERVER_ADDRESS}
+ username: manager
+ password: {SERVER_PASSWORD}
+ verify: False # if TLS was skipped earlier
+
+manager:
+ manager_name: "$MANAGER_NAME"
+ queue_tag: null
+ log_file_prefix: null
+ update_frequency: 30
+ test: False
