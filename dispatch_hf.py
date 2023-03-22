@@ -23,7 +23,7 @@ def parse_credentials(credential_file):
 @click.command(help="Dispatch the clients to the space")
 @click.option("--credential-file", type=str, 
               help="""
-Path to the credentials file containing the following info:
+Path to the credentials file (json format) containing the following info:
 - HF_USER
 - HF_TOKEN
 - SERVER_ADDRESS
