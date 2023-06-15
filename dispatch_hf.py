@@ -23,7 +23,7 @@ def parse_credentials(credential_file):
 @click.command(help="Dispatch the clients to the space")
 @click.option("--credential-file", type=str, 
               help="""
-Path to the credentials file containing the following info:
+Path to the credentials file (json format) containing the following info:
 - HF_USER
 - HF_TOKEN
 - SERVER_ADDRESS
@@ -66,7 +66,6 @@ def dispatch(credential_file, space, nb_clients, paid):
         api.add_space_secret(**commons, key="SERVER_PASSWORD", value=credentials["SERVER_PASSWORD"])
         api.add_space_secret(**commons, key="MANAGER_NAME", value=f"HF_Manager_{REPO_ID}")
         
-
         res = api.upload_folder(
             repo_id=REPO_ID, 
             repo_type="space", 
